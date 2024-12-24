@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Error</title>
+</head>
+<body>
+  <div id="myDiv">
+    <p>This is some text.</p>
+  </div>
+
+  <script>
+    // Incorrectly using innerHTML to add an element
+    document.getElementById("myDiv").innerHTML += "<p>This is another paragraph.</p>";
+    document.getElementById("myDiv").innerHTML = "<p>This is another paragraph.</p>";
+
+    //Correct way to add an element dynamically
+    const newParagraph = document.createElement("p");
+    newParagraph.textContent = "This is a dynamically created paragraph.";
+    document.getElementById("myDiv").appendChild(newParagraph);
+
+  </script>
+</body>
+</html>
